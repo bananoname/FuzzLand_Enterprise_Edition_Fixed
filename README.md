@@ -42,16 +42,7 @@ Khám phá các thư mục ẩn, subdomain, trang debug, và thông tin nhạy c
 - Directory Fuzzing
 - Page & Recursive Fuzzing
 - Parameter Fuzzing (GET/POST)
-- Git Enumeration
 - Header Bypass
-
----
-
-## 🛠 Tools gợi ý
-
-- [`ffuf`](https://github.com/ffuf/ffuf) – Fuzz đường dẫn và file
-- `git-dumper` – Trích xuất `.git/`
-- `curl`, `wget`, `dirsearch`, `httpx`, v.v.
 
 ---
 
@@ -115,6 +106,9 @@ docker-compose up -d
 ---
 
 Chúc bạn săn flag vui vẻ và học được thật nhiều kỹ năng thực tế! 🕵️‍♂️🧠
+<<<<<<< HEAD
 
 
 > 📢 If you use or modify this project, please credit the original author: [bananoname](https://github.com/[your-username]/[repo-name]).
+=======
+>>>>>>> 9cd2e82389ad2d9cdf2d16550259bf20d5ce973a
