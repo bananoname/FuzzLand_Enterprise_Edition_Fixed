@@ -12,7 +12,6 @@ Tại đây, bạn sẽ vào một vai **"Chuyên gia bảo mật nội bộ** �
 Một số nhân viên cũ để lại các thành phần chưa cấu hình hoàn chỉnh như:
 - Subdomain ẩn không được giám sát
 - Endpoint debug bị bỏ quên
-- File `.git` chưa xóa khỏi production
 - API chưa kiểm tra phân quyền
 
 Bạn được giao nhiệm vụ giả lập tấn công để kiểm tra toàn bộ hệ thống và tìm ra các flag bị ẩn bên trong.
@@ -46,15 +45,6 @@ Khám phá các thư mục ẩn, subdomain, trang debug, và thông tin nhạy c
 - Header Bypass
 
 ---
-
-## 🛠 Tools gợi ý
-
-- [`ffuf`](https://github.com/ffuf/ffuf) – Fuzz đường dẫn và file
-- `git-dumper` – Trích xuất `.git/`
-- `curl`, `wget`, `dirsearch`, `httpx`, v.v.
-
----
-
 ## 📁 Fuzzing Mẫu
 
 ### 1. Fuzz thư mục ẩn:
@@ -76,20 +66,22 @@ ffuf -u http://FUZZ.FuzzLand.local -w /usr/share/seclists/Discovery/DNS/subdomai
 ```
 
 ---
+### 4. 🔍 Parameter Fuzzing (GET/POST)
 
-## 🔍 Git Enumeration (`dev.FuzzLand.local`)
+### 🎯 Target: `http://fuzzland.local/hidden-params.php`
+
+This page behaves normally unless a **hidden GET or POST parameter** is passed.
+
+---
+
+### 🧪 Example: GET parameter fuzzing
+
+Try discovering hidden GET params:
 
 ```bash
-# Dò xem có /.git không
-curl http://dev.FuzzLand.local/.git/HEAD
+ffuf -u http://fuzzland.local/hidden-params.php?FUZZ=true \
+     -w /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt
 
-# Clone lại repo:
-git clone http://dev.FuzzLand.local/.git recovered-dev
-cd recovered-dev
-git branch -a
-git checkout dev-legacy
-cat legacy.php
-```
 
 ---
 
@@ -100,7 +92,7 @@ cat legacy.php
   FLAG{something_hidden_here}
   ```
 
-- Tổng cộng có ít nhất **5 flag** được chèn rải rác ở nhiều nơi: dev, config, backup, debug, Git repo...
+- Tổng cộng có ít nhất **5 flag** được chèn rải rác ở nhiều nơi: dev, config, backup, debug
 
 ---
 
@@ -114,4 +106,7 @@ docker-compose up -d
 
 ---
 
-Chúc bạn săn flag vui vẻ và học được thật nhiều kỹ năng thực tế! 🕵️‍♂️🧠
+**Chúc bạn săn flag vui vẻ và học được thật nhiều kỹ năng thực tế! 🕵️‍♂️🧠**
+
+> 📢 If you use or modify this project, please credit the original author: [bananoname](https://github.com/[your-username]/[repo-name]).
+
