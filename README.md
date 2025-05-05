@@ -115,3 +115,6 @@ docker-compose up -d
 ---
 
 Chúc bạn săn flag vui vẻ và học được thật nhiều kỹ năng thực tế! 🕵️‍♂️🧠
+
+
+> 📢 If you use or modify this project, please credit the original author: [bananoname](https://github.com/[your-username]/[repo-name]).

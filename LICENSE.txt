@@ -1,0 +1,9 @@
+Copyright (c) 2025 bananoname
+
+Permission is hereby granted to use, copy, and share this project (in part or in full) 
+for any purpose, provided that proper credit is clearly given to the original author.
+
+You must include a visible attribution to the original repository or author, such as:
+"Based on work by bananoname - https://github.com/[your-username]/[repo-name]".
+
+Commercial use or redistribution without proper attribution is strictly prohibited.
