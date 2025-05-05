@@ -1,0 +1,2 @@
+127.0.0.1 - - [01/May/2025:00:00:01 +0000] "GET /monitor.php HTTP/1.1" 200 123
+# FLAG{log-access-found}

@@ -1,0 +1,1 @@
+<?php echo 'Monitoring internal services...'; echo '<!-- FLAG{ssrf-success} -->'; ?>

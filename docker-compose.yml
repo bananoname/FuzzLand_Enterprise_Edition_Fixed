@@ -1,0 +1,23 @@
+version: '3'
+services:
+  web:
+    image: php:7.4-fpm
+    volumes:
+      - ./web:/var/www/html
+    networks:
+      - fuzznet
+
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./web:/var/www/html
+    ports:
+      - "80:80"
+    depends_on:
+      - web
+    networks:
+      - fuzznet
+
+networks:
+  fuzznet:
