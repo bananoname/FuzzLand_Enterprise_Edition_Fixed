@@ -42,16 +42,7 @@ Khám phá các thư mục ẩn, subdomain, trang debug, và thông tin nhạy c
 - Directory Fuzzing
 - Page & Recursive Fuzzing
 - Parameter Fuzzing (GET/POST)
-- Git Enumeration
 - Header Bypass
-
----
-
-## 🛠 Tools gợi ý
-
-- [`ffuf`](https://github.com/ffuf/ffuf) – Fuzz đường dẫn và file
-- `git-dumper` – Trích xuất `.git/`
-- `curl`, `wget`, `dirsearch`, `httpx`, v.v.
 
 ---
 
