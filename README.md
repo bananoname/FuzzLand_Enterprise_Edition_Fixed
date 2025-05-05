@@ -12,7 +12,6 @@ Tại đây, bạn sẽ vào một vai **"Chuyên gia bảo mật nội bộ** �
 Một số nhân viên cũ để lại các thành phần chưa cấu hình hoàn chỉnh như:
 - Subdomain ẩn không được giám sát
 - Endpoint debug bị bỏ quên
-- File `.git` chưa xóa khỏi production
 - API chưa kiểm tra phân quyền
 
 Bạn được giao nhiệm vụ giả lập tấn công để kiểm tra toàn bộ hệ thống và tìm ra các flag bị ẩn bên trong.
@@ -68,22 +67,6 @@ ffuf -u http://FUZZ.FuzzLand.local -w /usr/share/seclists/Discovery/DNS/subdomai
 
 ---
 
-## 🔍 Git Enumeration (`dev.FuzzLand.local`)
-
-```bash
-# Dò xem có /.git không
-curl http://dev.FuzzLand.local/.git/HEAD
-
-# Clone lại repo:
-git clone http://dev.FuzzLand.local/.git recovered-dev
-cd recovered-dev
-git branch -a
-git checkout dev-legacy
-cat legacy.php
-```
-
----
-
 ## 🚩 FLAG
 
 - Mỗi khu vực có thể chứa file PHP, TXT hoặc LOG với FLAG dạng:
@@ -106,9 +89,5 @@ docker-compose up -d
 ---
 
 Chúc bạn săn flag vui vẻ và học được thật nhiều kỹ năng thực tế! 🕵️‍♂️🧠
-<<<<<<< HEAD
-
 
 > 📢 If you use or modify this project, please credit the original author: [bananoname](https://github.com/[your-username]/[repo-name]).
-=======
->>>>>>> 9cd2e82389ad2d9cdf2d16550259bf20d5ce973a
